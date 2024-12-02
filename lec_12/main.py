@@ -3,8 +3,8 @@ import time
 
 def create_file(filename):
     with open(filename, 'w') as f:
-        for _ in range(100):
-            numbers = [str(random.randint(1, 100)) for _ in range(20)]
+        for i in range(100):
+            numbers = [str(random.randint(1, 100)) for i in range(20)]
             f.write(' '.join(numbers) + '\n')
 
 
@@ -13,7 +13,7 @@ def measure_time(func):
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print(f"function {func.__name__} is working {end - start:.4f} sec.")
+        print(f"function {func.__name__} is working {end - start:.4f} seconds.")
         return result
     return wrapper
 
